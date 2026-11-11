@@ -3,6 +3,7 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_BOARD_SOC),pxa1088)
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_SRC_FILES := pxa1088-dtbtool.c
 LOCAL_CFLAGS += -Wall
 LOCAL_MODULE := dtbToolPXA
@@ -14,6 +15,7 @@ ifeq ($(TARGET_BOARD_SOC),pxa1908)
 
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 LOCAL_SRC_FILES := dtbToolPXA1908
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_IS_HOST_MODULE := true
